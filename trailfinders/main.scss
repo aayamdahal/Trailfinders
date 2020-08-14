@@ -1,0 +1,559 @@
+@import"configs";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    @media only  screen and (max-width: $bp-large){
+        font-size:50%;
+
+    }
+}
+body{
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(98deg, rgb(151, 5, 44) 16%, rgb(141, 44, 71) 48%, rgb(221, 107, 149) 82%);
+    color: $grey-dark-1;
+}
+.container{
+    max-width: 100rem;
+    margin: 8rem auto;
+    background-color: $grey-light-2;
+    box-shadow: $shadow-dark;
+    min-height: 50rem;
+
+    @media only screen and (max-width:$bp-largest){
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+.header{
+    height: 7rem;
+    background-color: #f4f4f4;
+    border-bottom: $grey-light-2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sidebar{
+    background-color: $grey-dark-1;
+    color: black;
+    flex: 0 0 19%;
+}
+.hotel-view{  
+    flex: 1;
+}
+.content{
+    display: flex;
+}
+.logo{
+    height: 3.25rem;
+    margin-left: 3rem;
+}
+
+.search-icon{
+    height: 2rem;
+    width: 2rem;
+    fill: $grey-dark-2;
+}
+.user-nav-icon{
+    height: 2.25rem;
+    width: 2.25rem;
+}
+.user-nav-user-photo{
+    height: 3.75rem;
+    border-radius: 50%;;
+}
+
+
+.search{
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+}
+.search-input{
+    font-family: inherit;
+    border-radius: 5rem;
+    background-color: $grey-light-3;
+    border: none;
+    width: 90%;
+    color: inherit;
+    padding: 0.7rem 2rem;
+    transition: all 0.2s;
+    margin-right: -3.5rem;
+
+    &:focus{
+        outline: none;
+        width: 100%;
+        background-color: $grey-light-3;
+    }
+}
+.search-button{
+    border: none;
+    background-color: $grey-light-3;
+    color: $grey-light-3;
+    
+
+    &:focus{
+        outline: none;
+    }
+    &:active{
+        transform: translateY(2px);
+    }
+}
+.search-input::-webkit-input-placeholder{
+font-weight: 100;
+color: $grey-dark-3;
+}
+.user-nav > *{
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+}
+.user-nav > *:hover{
+    background-color: $grey-light4;
+}
+.user-nav-icon-box{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.user-nav-user{
+    display: flex;
+    align-items: center;
+}
+.user-nav-icon{
+    fill: #555;
+    
+}
+.user-nav-notification{
+    background-color: #ff1c34;
+    border-radius: 50%;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    position: absolute;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+.user-nav-user-photo{
+    margin-right: 1.5rem;
+
+}
+.user-nav-user-name{
+    font-size: 1.2rem;
+    transition: all 0.1s;
+    &:hover{
+        transform: scale(1.5);
+    }
+}
+// nav bar
+.sidebar{  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.content{
+    display: flex;
+    justify-content:  space-between;
+
+    @media only screen and (max-width: $bp-medium){
+        flex-direction: column;
+    }
+}
+.footer{
+    background-color: #111;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2.5rem;
+    color: #999;
+
+    @media only screen and (max-width: $bp-medium){
+        display: none;
+    }
+}
+.side-nav-icon{
+    width: 1.75rem;
+    height: 1.75rem;
+}
+a{
+    text-decoration: none;
+}
+.side-nav-item{
+    list-style: none;
+    margin-top: 2rem;
+    position: relative;
+    
+    @media only screen and (max-width: $bp-medium){
+        flex: 1;
+    }
+    &:not(:last-child){
+        margin-bottom: 1rem;
+    }  
+}
+.side-nav-item a {
+    
+    color: #c3c3c3;
+    font-size:1.5rem;
+    font-weight: 300;
+    font-family: inherit;
+    
+    
+}
+.side-nav-icon{
+    margin: 0rem 1rem;
+    fill:currentColor;   
+}
+
+
+.side-nav-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative; 
+    transition-property: color;
+    transition-duration: 0.3s;
+    padding: 1.5rem;
+    text-transform: uppercase;
+    color: $grey-dark-3;
+    font-weight: 600;
+
+    
+  }
+  .side-nav-content:before {
+    content: "";
+   
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #e07f9b;
+    transform: scaleX(0); 
+    transform-origin: 0 50%; 
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+  .side-nav-content:hover, .side-nav-content:focus, .side-nav-content:active {
+    color: white;
+  }
+  .side-nav-content:hover:before, .side-nav-content:focus:before, .side-nav-content:active:before {
+    
+    transform: scaleX(1);
+  }
+  .side-nav-content-color{
+    background-color: #e07f9a;
+    color: white !important;
+  }
+// gallery
+.gallery{
+    display: flex;
+    
+    &-photo{
+        width:100%;
+        display: block;
+    }
+}
+.main-content{
+    display: flex;   
+    justify-content: space-between;
+}
+.overview{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+.overview-icon-star,
+.overview-icon-location{
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: $primary;
+}
+
+.overview-stars
+{   display: flex;
+    margin-right: auto;
+}
+.overview-heading{
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+    font-weight: 300;
+}
+.btn-inline{
+    border: none;
+    color: $primary;
+    font-size: inherit; 
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 1px solid currentColor;
+
+    &:focus{
+        outline: none;
+        animation: pulsate 1s infinite;
+    }  
+}
+.btn-inline:hover{
+    color: #111;
+}
+.overview-location{
+    display: flex;
+    margin-right: 1.5rem;
+    font-size: 1.2rem;
+    
+}
+.overview-rating{
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+}
+.overview-rating{
+    background-color: $primary;
+    margin-left: 3rem;
+    color: white;
+}
+.overview-rating-avg{
+    font-size: 2.5rem;
+    font-weight: 100;
+}
+.overview-rating-count{
+    font-size: 0.8rem;
+}
+.detail{
+display: flex;
+padding: 3.5rem;
+background-color: $grey-light-1;
+}
+.description{
+background-color: #fff;
+box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: 0.5);
+flex: 0 0 60%;
+margin-right: 4.5rem;
+}
+.user-reviews{
+    flex: 1;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+}
+.recommend-image{
+    width: 10%;
+    border-radius: 50%;
+}
+li{
+    list-style: none;
+}
+.paragraph {
+    border-bottom: 1px solid #ccc;
+p{
+    margin: 1rem;
+    font-size: 1.5rem;
+    color: #555;
+}
+}
+.travel-list{
+    color: #555;
+    padding: 2rem 0rem;
+    border-bottom: 1px solid #ccc;
+    }
+.travel-list-item{
+    display: flex;
+    align-items: center;
+    flex: 0 0 50%;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+.travel-list-items{
+    display: flex;
+    flex-wrap: wrap;    
+}
+.recommendation{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+    
+    p{
+        margin-right: auto;
+        font-size: 1.2rem;
+    }
+}
+
+
+.recommend-image{
+    width: 25%;
+    display: block;
+    float: right;
+    margin-right: -1.3rem;
+    border: 3px solid white;
+}
+.account-img{
+    border-radius: 50%;
+    width: 3rem;
+    margin-right: 1rem;
+}
+.user-reviews{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    p{
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        margin-top: 0.5rem;
+    }
+}
+.card{
+    background-color: #ccc;
+    padding: 3rem 1rem;
+    flex: 1;
+    margin: 1rem;
+    position: relative;
+    box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: 0.5);
+
+    &::before{
+        content: '\201c';
+        font-size: 15rem;
+        position: absolute;
+        opacity: 0.2;
+        top: -2rem;
+        font-family: sans-serif;
+        left: -0.1rem;
+        color:#666;
+        transform: skewY(5deg);
+    }
+}
+.image-account{
+    display: flex;
+    flex-direction: column;
+    span{
+        
+        font-weight: 500;
+    }
+}
+.accounts{
+    display: flex;
+    align-items: center;
+}
+.btn{
+    border: none;
+    border-bottom: 1px solid $primary;
+    width: fit-content;
+    background-color: transparent;
+    color: $primary;
+    margin-top: 1.5rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    &:focus{
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+
+    &:hover{
+        span{
+            margin-left: 6px;
+        }
+    }
+}
+.score{
+    margin-left: auto;
+}
+.account-name{
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+small{
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.score{
+    font-size: 2rem;
+    color: $primary;
+}
+
+.btn span{
+    transition: all 0.2s;
+}
+.available{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p{
+        padding: 1.5rem;
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: #666;
+    }
+}
+.btn-book{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 25px;
+    font-weight: 300;
+    text-transform: uppercase;
+    background: linear-gradient(98deg, rgb(214, 89, 122) 16%, rgb(170, 9, 55) 48%, rgb(218, 109, 149) 82%);
+    color: white;
+    border: none;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    &:focus{
+        outline: none;
+    }
+}
+.btn-visible{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    padding: 1.8rem 7.5rem;
+    transition: all 0.1s;
+}
+.btn-invisible{
+    display: inline-block;
+    padding: 1.8rem 0rem;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    top: -100%;
+    transition: all 0.2s;
+}
+.btn-book:hover{
+    background: linear-gradient(98deg, rgb(224, 132, 158) 22%, rgb(235, 103, 138) 65%);
+    .btn-invisible{
+        top: 0;
+    }
+    .btn-visible{
+        transform: translateY(100%);
